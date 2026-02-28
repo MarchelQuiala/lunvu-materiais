@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunvu Materiais - Início</title>
+    <title>Lunvu Materiais - Catálogo Completo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <!-- Navbar única com menu horizontal e toggle -->
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
@@ -18,25 +17,19 @@
                     <span class="logo-text"><span class="logo-highlight">LUNVU</span> MATERIAIS</span>
                 </a>
             </div>
-            
-            <!-- Menu horizontal (visível em desktop) -->
             <ul class="nav-links">
                 <li><a href="servicos.html">Nossos Serviços</a></li>
                 <li><a href="sobre.html">Sobre Nós</a></li>
                 <li><a href="contato.html">Contacto</a></li>
             </ul>
-            
-            <!-- Botão Orçamento (visível em desktop) -->
             <a href="contato.html" class="btn-primary desktop-only">Orçamento</a>
-            
-            <!-- Ícone de três barras (visível apenas em mobile) -->
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
 
-    <!-- Sidebar (menu lateral) -->
+    <!-- Sidebar (menu lateral) - copia exatamente o mesmo código das outras páginas -->
     <div class="sidebar-overlay"></div>
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -50,11 +43,10 @@
         </div>
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
                 <li><a href="servicos.html"><i class="fas fa-concierge-bell"></i> Nossos Serviços</a></li>
                 <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
                 <li><a href="contato.html"><i class="fas fa-envelope"></i> Contacto</a></li>
-                <li><a href="tel:+244923456789"><i class="fas fa-phone"></i> Ligar Agora</a></li>
+                <li><a href="tel:+244942646553"><i class="fas fa-phone"></i> Ligar Agora</a></li>
                 <li><a href="contato.html" class="sidebar-btn">Solicitar Orçamento</a></li>
             </ul>
         </nav>
@@ -69,45 +61,68 @@
         </div>
     </aside>
 
-    <!-- HERO FULLSCREEN COM IMAGEM DE FUNDO (único) -->
-    <section class="hero-full">
-        <img src="imagens/I21.png" alt="Lunvu Materiais" class="hero-full-imagem">
-        <div class="hero-full-overlay"></div>
-        <div class="hero-full-conteudo">
-            <h1 class="animate-title">Transformamos <span class="highlight">Projetos</span> em Realidade</h1>
-            <p class="animate-subtitle">Especializada no fornecimento de materiais de construção civil, elétrico e canalização de alta qualidade para sua obra ou reforma.</p>
-            <div class="hero-buttons">
-                <a href="servicos.html" class="btn-primary">Nossos Serviços</a>
-                <a href="contato.html" class="btn-secondary">Fale Conosco</a>
+    <!-- Hero da página (opcional) -->
+    <section class="hero-historia">
+        <img src="imagens/gg.jpg" alt="Catálogo" class="hero-historia-imagem">
+        <div class="hero-historia-overlay"></div>
+        <div class="hero-historia-conteudo">
+            <h1 class="animate-title">Catálogo <span class="highlight">Completo</span></h1>
+            <p class="animate-subtitle">Todos os nossos produtos num só lugar</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo principal do catálogo -->
+    <section class="catalogo-page">
+        <div class="catalogo-container">
+            <!-- Sidebar de categorias numerada -->
+          <aside class="catalogo-sidebar">
+    <!-- Categorias principais (visíveis inicialmente) -->
+    <div id="categorias-principais" class="categoria-nivel">
+        <h3>Categorias</h3>
+        <ul class="categoria-lista">
+            <li><button class="categoria-principal-btn" data-principal="eletricos">Materiais Elétricos</button></li>
+            <li><button class="categoria-principal-btn" data-principal="construcao">Construção Civil</button></li>
+            <li><button class="categoria-principal-btn" data-principal="canalizacao">Canalização</button></li>
+            <li><button class="categoria-principal-btn" data-principal="ferramentas">Ferramentas</button></li>
+        </ul>
+    </div>
+
+    <!-- Subcategorias (inicialmente ocultas) -->
+    <div id="subcategorias" class="categoria-nivel" style="display: none;">
+        <div class="subcategoria-header">
+            <button id="voltar-principais" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</button>
+            <h3 id="titulo-subcategoria">Materiais Elétricos</h3>
+        </div>
+        <ul class="categoria-lista" id="lista-subcategorias">
+            <!-- Será preenchido via JavaScript -->
+        </ul>
+    </div>
+</aside>
+
+            <!-- Área de produtos (com pesquisa) -->
+            <div class="catalogo-produtos">
+                <!-- Campo de pesquisa -->
+                <div class="pesquisa-container">
+                    <input type="text" id="pesquisaInput" placeholder="O que procura?">
+                    <button id="pesquisaBtn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Grelha de produtos -->
+                <div class="produtos-grid" id="produtosGrid">
+                    <!-- Os produtos serão carregados via JavaScript -->
+                </div>
+
+                <!-- Paginação -->
+<div class="paginacao">
+    <button class="btn-paginacao" id="btnAnterior" disabled>Anterior</button>
+    <span class="pagina-info" id="paginaInfo">Página 1</span>
+    <button class="btn-paginacao" id="btnProximo">Próximo</button>
+</div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO NOSSOS MATERIAIS -->
-    <section class="materiais-section">
-        <div class="section-header">
-            <h2>Nossos <span class="highlight">Materiais</span></h2>
-            <p>Selecione uma categoria para ver os produtos</p>
-        </div>
-
-        <!-- Botões de Categoria -->
-        <div class="categoria-botoes">
-            <button class="btn-categoria ativo" data-categoria="eletricos">Materiais Elétricos</button>
-            <button class="btn-categoria" data-categoria="construcao">Construção Civil</button>
-            <button class="btn-categoria" data-categoria="canalizacao">Canalização</button>
-            <button class="btn-categoria" data-categoria="ferramentas">Ferramentas</button>
-        </div>
-
-        <!-- Grid de Produtos (preenchido via JavaScript) -->
-        <div class="materiais-grid" id="materiais-grid"></div>
-
-        <!-- Botão para Catálogo Completo -->
-        <div class="ver-catalogo-container">
-            <a href="catalogo.html" class="btn-primary btn-catalogo">Ver catálogo completo</a>
-        </div>
-    </section>
-
-    <!-- Newsletter (horizontal) -->
+    <!-- Newsletter (igual às outras páginas) -->
     <div class="footer-newsletter">
         <div class="newsletter-container">
             <div class="newsletter-text">
@@ -121,7 +136,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (igual às outras páginas) -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -131,21 +146,21 @@
                 </div>
                 <p>Fornecendo materiais de construção civil, elétrico e canalização com qualidade e compromisso para sua obra.</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/244942649121"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/244942646553" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Links Rápidos</h4>
                 <ul>
-                   
+                    <li><a href="index.html"><i class="fas fa-arrow-right"></i> Início</a></li>
                     <li><a href="servicos.html"><i class="fas fa-arrow-right"></i> Serviços</a></li>
                     <li><a href="sobre.html"><i class="fas fa-arrow-right"></i> Sobre Nós</a></li>
                     <li><a href="contato.html"><i class="fas fa-arrow-right"></i> Contacto</a></li>
-                    <li><a href="contato.html"><i class="fas fa-arrow-right"></i> Orçamento</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-arrow-right"></i> Catálogo</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -155,7 +170,6 @@
                     <li><a href="servicos.html"><i class="fas fa-arrow-right"></i> Material Elétrico</a></li>
                     <li><a href="servicos.html"><i class="fas fa-arrow-right"></i> Canalização</a></li>
                     <li><a href="servicos.html"><i class="fas fa-arrow-right"></i> Ferramentas</a></li>
-                    <li><a href="servicos.html"><i class="fas fa-arrow-right"></i> Assessoria Técnica</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -163,33 +177,19 @@
                 <div class="contact-info-footer">
                     <div class="item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Endereço</strong><br>
-                            Rua das Construções, 123 - Centro<br>
-                            Luanda, Angola
-                        </div>
+                        <div><strong>Endereço</strong><br>Rua Kikuxi<br>Luanda, Angola</div>
                     </div>
                     <div class="item">
                         <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <strong>Telefone</strong><br>
-                            +244 923 456 789
-                        </div>
+                        <div><strong>Telefone</strong><br>+244 942 646 553</div>
                     </div>
                     <div class="item">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>E-mail</strong><br>
-                            vendas@lunvumateriais.co.ao
-                        </div>
+                        <div><strong>E-mail</strong><br>vendas.lunvumateriais@gmail.com</div>
                     </div>
                     <div class="item">
                         <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Horário</strong><br>
-                            Seg - Sex: 8:00 - 17:00<br>
-                            Sábado: 8:00 - 12:00
-                        </div>
+                        <div><strong>Horário</strong><br>Seg - Sex: 8:00 - 17:00<br>Sábado: 8:00 - 12:00</div>
                     </div>
                 </div>
             </div>
@@ -202,6 +202,33 @@
             </div>
         </div>
     </footer>
+
+<!-- Modal de Ficha Técnica -->
+<div id="modal-produto" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+            <div class="modal-image">
+                <img id="modal-img" src="" alt="Produto">
+            </div>
+            <div class="modal-detalhes">
+                <h2 id="modal-nome"></h2>
+                <p id="modal-desc"></p>
+                <div id="modal-ficha" class="ficha-tecnica">
+                    <h3>Ficha Técnica</h3>
+                    <table>
+                        <tr><th>Material</th><td id="ft-material">-</td></tr>
+                        <tr><th>Dimensões</th><td id="ft-dimensoes">-</td></tr>
+                        <tr><th>Peso</th><td id="ft-peso">-</td></tr>
+                        <tr><th>Cor</th><td id="ft-cor">-</td></tr>
+                        <tr><th>Norma</th><td id="ft-norma">-</td></tr>
+                    </table>
+                </div>
+                <button class="btn-primary" id="modal-orcamento">Solicitar Orçamento</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
